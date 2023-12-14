@@ -52,14 +52,14 @@
         <div class="modal-content">
             <form method="post" id="frm_asignatura">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Paises</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">Asignaturas</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
 
                     <input type="hidden" name="ID_asignatura" id="ID_asignatura">                  
                     <div class="form-group">
-                        <label for="nombre">Nombre de la Asignatura</label>
+                        <label for="nombre_asignatura">Nombre de la Asignatura</label>
                         <input type="text" required class="form-control" id="Nombre_asignatura" name="Nombre_asignatura" placeholder="Ingrese el nombre de la asignatura">
                     </div>
                     <div class="form-group">

@@ -128,7 +128,7 @@ var eliminar = (ID_asignatura) => {
     }
   });
 
-  limpia_Cajas();
+  impia_Cajas();
 };
 
 var limpia_Cajas = () => {
