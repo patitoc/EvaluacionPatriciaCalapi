@@ -73,6 +73,21 @@ class Clase_Asignaturas
         }
     }
 
+    public function asignatura_repetida($Nombre_asignatura)
+    {
+        try {
+            $con = new Clase_Conectar_Base_Datos();
+            $con = $con->ProcedimientoConectar();
+            $cadena = "SELECT count(*) as asignatura_repetida FROM `asignaturas` WHERE Nombre=$Nombre_asignatura";
+            $result = mysqli_query($con, $cadena);
+            return "ok";
+        } catch (Throwable $th) {
+            return $th->getMessage();
+        } finally {
+            $con->close();
+        }
+    }
+
 
 
 }

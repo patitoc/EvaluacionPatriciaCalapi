@@ -21,13 +21,16 @@
                                     <h6 class="fw-semibold mb-0">#</h6>
                                 </th>
                                 <th class="border-bottom-0">
-                                    <h6 class="fw-semibold mb-0">Nombre</h6>
+                                    <h6 class="fw-semibold mb-0">Nombre Asignatura</h6>
                                 </th>
                                 <th class="border-bottom-0">
-                                    <h6 class="fw-semibold mb-0">Asignatura</h6>
+                                    <h6 class="fw-semibold mb-0">Nombre Estudiante</h6>
                                 </th>
                                 <th class="border-bottom-0">
-                                    <h6 class="fw-semibold mb-0">Opciones</h6>
+                                    <h6 class="fw-semibold mb-0">Calificacion</h6>
+                                </th>
+                                <th class="border-bottom-0">
+                                    <h6 class="fw-semibold mb-0">Fecha examen</h6>
                                 </th>
                             </tr>
                         </thead>

@@ -5,7 +5,7 @@
     <div class="col-lg-8 d-flex align-items-stretch">
         <div class="card w-100">
             <div class="card-body p-4">
-                <h5 class="card-title fw-semibold mb-4">Listado Estudiantes</h5>
+                <h5 class="card-title fw-semibold mb-4">Listado de Estudiantes</h5>
 
                 <div class="table-responsive">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal_estudiantes">

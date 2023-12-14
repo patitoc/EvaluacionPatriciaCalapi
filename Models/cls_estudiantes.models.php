@@ -64,7 +64,8 @@ class Clase_Estudiantes
         try {
             $con = new Clase_Conectar_Base_Datos();
             $con = $con->ProcedimientoConectar();
-            $cadena = "delete from estudiantes where ID_estudiante=$ID_estudiante";
+            $cadena = "DELETE FROM estudiantes where `ID_estudiante`=$ID_estudiante";
+            //DELETE FROM estudiantes WHERE `estudiantes`.`ID_estudiante` = ''"
             $result = mysqli_query($con, $cadena);
             return "ok";
         } catch (Throwable $th) {
@@ -78,7 +79,7 @@ class Clase_Estudiantes
         try {
             $con = new Clase_Conectar_Base_Datos();
             $con = $con->ProcedimientoConectar();
-            $cadena = "SELECT count(*) as estudiante_repetido FROM `estudiantes` WHERE Nombre=$Nombre";
+            $cadena = "SELECT count(*) as estudiante_repetido FROM `estudiantes` WHERE `Nombre`=$Nombre";
             $result = mysqli_query($con, $cadena);
             return "ok";
         } catch (Throwable $th) {
