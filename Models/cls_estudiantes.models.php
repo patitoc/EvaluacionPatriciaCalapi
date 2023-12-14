@@ -50,7 +50,7 @@ class Clase_Estudiantes
         try {
             $con = new Clase_Conectar_Base_Datos();
             $con = $con->ProcedimientoConectar();
-            $cadena = "UPDATE `estudiantes` SET `ID_estudiante`='$ID_estudiante', `Nombre`='$Nombre', `Edad`='$Edad', `Carrera`='$Carrera', `Promedio`='$Promedio' WHERE `ID_estudiante`='$ID_estudiante'";
+            $cadena = "UPDATE `estudiantes` SET `Nombre`='$Nombre', `Edad`='$Edad', `Carrera`='$Carrera', `Promedio`='$Promedio' WHERE `ID_estudiante`='$ID_estudiante'";
             $result = mysqli_query($con, $cadena);
             return "ok";
         } catch (Throwable $th) {
@@ -73,7 +73,19 @@ class Clase_Estudiantes
             $con->close();
         }
     }
-
-
+    public function estudiante_repetido($Nombre)
+    {
+        try {
+            $con = new Clase_Conectar_Base_Datos();
+            $con = $con->ProcedimientoConectar();
+            $cadena = "SELECT count(*) as estudiante_repetido FROM `estudiantes` WHERE Nombre=$Nombre";
+            $result = mysqli_query($con, $cadena);
+            return "ok";
+        } catch (Throwable $th) {
+            return $th->getMessage();
+        } finally {
+            $con->close();
+        }
+    }
 
 }

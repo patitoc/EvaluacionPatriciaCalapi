@@ -4,7 +4,7 @@ $estudiante = new Clase_Estudiantes;
 switch ($_GET["op"]) {
     case 'todos':
         $datos = array(); //defino un arreglo
-        $datos = $estudiante->todos(); //llamo al modelo de usuarios e invoco al procedimiento todos y almaceno en una variable
+        $datos = $estudiante->todos(); //llamo al modelo de estudiantes e invoco al procedimiento todos y almaceno en una variable
         while ($fila = mysqli_fetch_assoc($datos)) { //recorro el arreglo de datos
             $todos[] = $fila;
         }
@@ -13,7 +13,7 @@ switch ($_GET["op"]) {
     case "uno":
         $ID_estudiante = $_POST["ID_estudiante"]; //defino una variable para almacenar el id del estudiante, la variable se obtiene mediante POST
         $datos = array(); //defino un arreglo
-        $datos = $estudiante->uno($ID_estudiante); //llamo al modelo de usuarios e invoco al procedimiento uno y almaceno en una variable
+        $datos = $estudiante->uno($ID_estudiante); //llamo al modelo de estudiante e invoco al procedimiento uno y almaceno en una variable
         $uno = mysqli_fetch_assoc($datos); //recorro el arreglo de datos
         echo json_encode($uno); //devuelvo el arreglo en formato json
         break;
@@ -22,8 +22,9 @@ switch ($_GET["op"]) {
         $Edad = $_POST["Edad"];
         $Carrera = $_POST["Carrera"];
         $Promedio = $_POST["Promedio"];
+
         $datos = array(); //defino un arreglo
-        $datos = $estudiante->insertar($Nombre, $Edad, $Carrera, $Promedio); //llamo al modelo de usuarios e invoco al procedimiento insertar
+        $datos = $estudiante->insertar($Nombre, $Edad, $Carrera, $Promedio); //llamo al modelo de estudiante e invoco al procedimiento insertar
         echo json_encode($datos); //devuelvo el arreglo en formato json
         break;
     case 'actualizar':
@@ -34,7 +35,7 @@ switch ($_GET["op"]) {
         $Promedio = $_POST["Promedio"];
         
         $datos = array(); //defino un arreglo
-        $datos = $estudiante->actualizar($ID_estudiante, $Nombre, $Edad, $Carrera, $Promedio); //llamo al modelo de usuarios e invoco al procedimiento actual
+        $datos = $estudiante->actualizar($ID_estudiante, $Nombre, $Edad, $Carrera, $Promedio); //llamo al modelo de estudiante e invoco al procedimiento actual
         echo json_encode($datos); //devuelvo el arreglo en formato json
         break;
     case 'eliminar':
@@ -43,4 +44,13 @@ switch ($_GET["op"]) {
         $datos = $estudiante->eliminar($ID_estudiante); //llamo al modelo de usuarios e invoco al procedimiento uno y almaceno en una variable
         echo json_encode($datos); //devuelvo el arreglo en formato json
         break;
+        
+    case "estudiante_repetido":
+        $Nombre = $_POST["Nombre"];
+        $datos = array(); //defino un arreglo
+        $datos = $estudiante->estudiante_repetido($Nombre); //llamo al modelo de estudiantes
+        $uno = mysqli_fetch_assoc($datos);
+        echo json_encode($uno);
+        break;
+
 }
