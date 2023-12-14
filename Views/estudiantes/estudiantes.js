@@ -56,7 +56,7 @@ var todos = () =>{
         success: function (res) {
           res = JSON.parse(res);
           if (res == "ok") {
-            Swal.fire("Estudiantes", "Registrado con éxito" , "success");
+            Swal.fire("Estudiante", "Registrado con éxito" , "success");
             todos();
             limpia_Cajas();
           } else {
