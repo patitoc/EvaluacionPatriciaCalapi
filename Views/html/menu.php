@@ -37,11 +37,11 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="paises/paises.php" target="base" aria-expanded="false">
+              <a class="sidebar-link" href="estudiantes/estudiantes.php" target="base" aria-expanded="false">
                 <span>
                   <i class="ti ti-alert-circle"></i>
                 </span>
-                <span class="hide-menu">Paises</span>
+                <span class="hide-menu">Estudiantes</span>
               </a>
             </li>
             <li class="sidebar-item">
