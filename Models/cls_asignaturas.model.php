@@ -1,13 +1,13 @@
 <?php
 require_once('cls_conexion.model.php');
-class Clase_Provincias
+class Clase_Asignaturas
 {
     public function todos()
     {
         try {
             $con = new Clase_Conectar_Base_Datos();
             $con = $con->ProcedimientoConectar();
-            $cadena = "SELECT Provincias.ProvinciasId, Provincias.Nombre, Pais.Nombre as pais FROM `Provincias` inner JOIN Pais on Pais.PaisId = Provincias.PaisesId";
+            $cadena = "SELECT asignaturas.ID_asignatura, asignatura.Nombre_asignatura, estudiante.Nombre as estudiante FROM `asignaturas` inner JOIN estudiantes on estudiantes.ID_estudiantes = asignaturas.ID_asignatura";
             $result = mysqli_query($con, $cadena);
             return $result;
         } catch (Throwable $th) {
@@ -16,12 +16,12 @@ class Clase_Provincias
             $con->close();
         }
     }
-    public function uno($ProvinciasId)
+    public function uno($ID_asignatura)
     {
         try {
             $con = new Clase_Conectar_Base_Datos();
             $con = $con->ProcedimientoConectar();
-            $cadena = "SELECT * FROM `Provincias` WHERE ProvinciasId=$ProvinciasId";
+            $cadena = "SELECT * FROM `asignaturas` WHERE ID_asigantura=$ID_asignatura";
             $result = mysqli_query($con, $cadena);
             return $result;
         } catch (Throwable $th) {
@@ -30,12 +30,12 @@ class Clase_Provincias
             $con->close();
         }
     }
-    public function insertar($Nombre,$PaisesId)
+    public function insertar($Nombre_asignatura, $ID_estudiante, $Calificacion, $Fecha_examen)
     {
         try {
             $con = new Clase_Conectar_Base_Datos();
             $con = $con->ProcedimientoConectar();
-            $cadena = "INSERT INTO `Provincias`(`Nombre`,PaisesId) VALUES ('$Nombre', $PaisesId)";
+            $cadena = "INSERT INTO `asignaturas`(`Nombre_asignatura`, ID_estudiante, `Calificacion`, `Fecha_examen`) VALUES ('$Nombre_asignatura', $ID_estudiante, '$Calificacion', '$Fecha_examen')";
             $result = mysqli_query($con, $cadena);
             return 'ok';
         } catch (Throwable $th) {
@@ -44,12 +44,12 @@ class Clase_Provincias
             $con->close();
         }
     }
-    public function actualizar($ProvinciasId, $PaisesId, $Nombre)
+    public function actualizar($ID_asignatura, $ID_estudiante, $Nombre_asignatura, $Calificacion, $Fecha_examen)
     {
         try {
             $con = new Clase_Conectar_Base_Datos();
             $con = $con->ProcedimientoConectar();
-            $cadena = "UPDATE `Provincias` SET `Nombre`='$Nombre', PaisesId=$PaisesId WHERE `ProvinciasId`='$ProvinciasId'";
+            $cadena = "UPDATE `asignaturas` SET `Nombre Asignatura`='$Nombre_asignatura', `Calificación`='$Calificacion', `Fecha examen`='$Fecha_examen', ID_estudiante=$ID_estudiante WHERE `ID_asignatura`='$ID_asignatura'";
             $result = mysqli_query($con, $cadena);
             return "ok";
         } catch (Throwable $th) {
@@ -58,12 +58,12 @@ class Clase_Provincias
             $con->close();
         }
     }
-    public function eliminar($ProvinciasId)
+    public function eliminar($ID_asignatura)
     {
         try {
             $con = new Clase_Conectar_Base_Datos();
             $con = $con->ProcedimientoConectar();
-            $cadena = "delete from Provincias where ProvinciasId=$ProvinciasId";
+            $cadena = "delete from asignaturas where ID_asignatura=$ID_asignatura";
             $result = mysqli_query($con, $cadena);
             return "ok";
         } catch (Throwable $th) {

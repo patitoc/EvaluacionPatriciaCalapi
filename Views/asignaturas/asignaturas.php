@@ -8,11 +8,11 @@
     <div class="col-lg-8 d-flex align-items-stretch">
         <div class="card w-100">
             <div class="card-body p-4">
-                <h5 class="card-title fw-semibold mb-4">Lista de Provincias</h5>
+                <h5 class="card-title fw-semibold mb-4">Lista de Asignaturas/h5>
 
                 <div class="table-responsive">
-                    <button type="button" onclick="cargaPaises()" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal_provincia">
-                        Nueva Provincia
+                    <button type="button" onclick="cargaAsignaturas()" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal_asignatura">
+                        Nueva Asignatura
                     </button>
                     <table class="table text-nowrap mb-0 align-middle">
                         <thead class="text-dark fs-4">
@@ -24,14 +24,14 @@
                                     <h6 class="fw-semibold mb-0">Nombre</h6>
                                 </th>
                                 <th class="border-bottom-0">
-                                    <h6 class="fw-semibold mb-0">Pais</h6>
+                                    <h6 class="fw-semibold mb-0">Asignatura</h6>
                                 </th>
                                 <th class="border-bottom-0">
                                     <h6 class="fw-semibold mb-0">Opciones</h6>
                                 </th>
                             </tr>
                         </thead>
-                        <tbody id="tabla_paises">
+                        <tbody id="tabla_estudiantes">
 
                         </tbody>
                     </table>
@@ -47,25 +47,25 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="Modal_provincia" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="Modal_asignatura" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form method="post" id="frm_provincias">
+            <form method="post" id="frm_asignatura">
                 <div class="modal-header">
                     <h5 class="modal-title" id="staticBackdropLabel">Paises</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
 
-                    <input type="hidden" name="ProvinciasId" id="ProvinciasId">                  
+                    <input type="hidden" name="ID_asignatura" id="ID_asignatura">                  
                     <div class="form-group">
-                        <label for="nombre">Nombre de la Provincia</label>
-                        <input type="text" required class="form-control" id="Nombre" name="Nombre" placeholder="Ingrese el nombre de la provincia">
+                        <label for="nombre">Nombre de la Asignatura</label>
+                        <input type="text" required class="form-control" id="Nombre_asignatura" name="Nombre_asignatura" placeholder="Ingrese el nombre de la asignatura">
                     </div>
                     <div class="form-group">
-                        <label for="PaisId">Pais</label>
-                      <select name="PaisId" id="PaisId" class="form-control">
-                        <option value="0">Seleccione un pais</option>
+                        <label for="ID_estudiante">Estudiante</label>
+                      <select name="ID_estudiante" id="ID_estudiante" class="form-control">
+                        <option value="0">Seleccione un estudiante</option>
                       </select>
                     </div>
 
@@ -81,4 +81,4 @@
 
 <?php require_once('../html/script2.php') ?>
 
-<script src="provincias.js"></script>
+<script src="asignaturas.js"></script>
