@@ -83,3 +83,7 @@ INSERT INTO `estudiantes` (`ID_estudiante`, `Nombre`, `Edad`, `Carrera`, `Promed
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
+INSERT INTO `usuarios` (`UsuarioId`, `Cedula`, `Nombres`, `Apellidos`, `Telefono`, `Correo`, `Contrasenia`, `Rol`) VALUES ('1', '0401400312', 'Yolanda Patricia ', 'Calapi Muñoz', '0984923825', 'ypcalapi@gmail.com', '123', 'Administrador');
